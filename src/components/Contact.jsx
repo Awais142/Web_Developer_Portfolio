@@ -13,6 +13,7 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission here
     console.log(formData);
+    window.location.href = `mailto:awaisakbar.dev@gmail.com?subject=Contact from ${formData.name}&body=${formData.message}`;
   };
 
   const handleChange = (e) => {
@@ -62,8 +63,8 @@ const Contact = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-primary py-20 px-8" id="contact">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative bg-primary py-16 px-8" id="contact">
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -73,19 +74,19 @@ const Contact = () => {
           <h2 className="text-5xl font-bold text-white mb-4">Contact Me</h2>
           <div className="w-20 h-1 bg-[#915eff] rounded-full mb-8"></div>
           
-          <p className="text-secondary text-lg max-w-3xl text-center mb-16">
+          <p className="text-secondary text-lg max-w-3xl text-center mb-12">
             I'm always interested in hearing about new projects and opportunities.
             Whether you have a question or just want to say hi, feel free to drop
             me a message. I'll try my best to get back to you!
           </p>
 
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="w-full"
+              className="w-full relative z-10"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -101,7 +102,7 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 rounded-lg bg-[#151030] border border-[#915eff]/20
                       text-white focus:outline-none focus:border-[#915eff] transition-colors
-                      placeholder-gray-500"
+                      placeholder-gray-500 hover:border-[#915eff]/40 cursor-text relative z-10"
                     placeholder="John Doe"
                   />
                 </div>
@@ -119,7 +120,7 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 rounded-lg bg-[#151030] border border-[#915eff]/20
                       text-white focus:outline-none focus:border-[#915eff] transition-colors
-                      placeholder-gray-500"
+                      placeholder-gray-500 hover:border-[#915eff]/40 cursor-text relative z-10"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -137,7 +138,7 @@ const Contact = () => {
                     rows="6"
                     className="w-full px-4 py-3 rounded-lg bg-[#151030] border border-[#915eff]/20
                       text-white focus:outline-none focus:border-[#915eff] transition-colors
-                      placeholder-gray-500 resize-none"
+                      placeholder-gray-500 resize-none hover:border-[#915eff]/40 cursor-text relative z-10"
                     placeholder="Your message..."
                   />
                 </div>
@@ -146,7 +147,7 @@ const Contact = () => {
                   type="submit"
                   className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-[#915eff] to-[#4d3483]
                     text-white font-medium hover:shadow-[0_0_20px_rgba(145,94,255,0.5)]
-                    transition-shadow"
+                    transition-all cursor-pointer hover:scale-[1.01] relative z-10"
                 >
                   Send Message
                 </button>
@@ -158,8 +159,14 @@ const Contact = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="w-full space-y-8"
+              className="w-full space-y-8 relative z-10"
             >
+              <div className="text-secondary text-base mb-8">
+                Let's create something amazing together! I'm here to help turn your ideas into reality.
+                Whether you need a stunning website, a powerful web application, or technical consultation,
+                I'm just a message away.
+              </div>
+              
               {/* Contact Details */}
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
@@ -169,7 +176,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-start gap-4 p-4 rounded-lg bg-[#151030] border border-[#915eff]/20
-                      hover:border-[#915eff]/40 transition-colors group"
+                      hover:border-[#915eff] transition-all group cursor-pointer hover:scale-[1.02] relative z-10"
                   >
                     <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#915eff] to-[#4d3483]
                       flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -188,7 +195,7 @@ const Contact = () => {
               </div>
 
               {/* Social Links */}
-              <div>
+              <div className="relative z-10">
                 <h3 className="text-white font-medium mb-4">Connect with me</h3>
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
@@ -199,7 +206,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-[#151030] border border-[#915eff]/20
                         flex items-center justify-center hover:border-[#915eff] hover:text-[#915eff]
-                        transition-colors"
+                        transition-all cursor-pointer hover:scale-110 relative z-10"
                       aria-label={social.label}
                     >
                       <social.icon className="text-lg" />
@@ -213,7 +220,7 @@ const Contact = () => {
       </div>
 
       {/* Background decoration */}
-      <div className="absolute inset-0 z-0 opacity-30">
+      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#915eff] rounded-full filter blur-[120px]" />
         <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-[#4d3483] rounded-full filter blur-[120px]" />
       </div>

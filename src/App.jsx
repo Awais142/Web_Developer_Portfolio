@@ -20,11 +20,11 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div className="relative overflow-x-hidden">
       {loading ? (
         <Loader />
       ) : (
-        <main className="relative z-0">
+        <main className="relative z-0 bg-primary">
           <div className="bg-primary">
             <Navbar />
             <Hero />
@@ -35,7 +35,7 @@ function App() {
           </div>
         </main>
       )}
-    </>
+    </div>
   )
 }
 
