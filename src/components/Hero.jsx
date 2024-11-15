@@ -32,8 +32,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="hero-subtitle mt-4"
             >
-              Full Stack Developer & <br className="sm:block hidden" />
-              UI/UX Designer
+              Full Stack Developer <br className="sm:block hidden" />
             </motion.p>
             
             <motion.div
