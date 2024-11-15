@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -68,6 +68,8 @@ button:focus-visible {
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -77,8 +79,19 @@ button:focus-visible {
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color-scheme: dark;
+}
+
+/* Selection color */
+::selection {
+  background: #915eff;
+  color: white;
+}
+
+:-moz-selection {
+  background: #915eff;
+  color: white;
 }
 
 @layer base {
