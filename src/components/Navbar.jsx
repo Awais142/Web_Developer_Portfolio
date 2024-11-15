@@ -8,7 +8,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'contact'];
+      const sections = ['home', 'about', 'services', 'projects', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -27,11 +27,32 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { id: 'home', icon: AiOutlineHome },
-    { id: 'about', icon: AiOutlineUser },
-    { id: 'projects', icon: AiOutlineFundProjectionScreen },
-    { id: 'contact', icon: AiOutlineMail }
+  const navLinks = [
+    {
+      id: "home",
+      title: "Home",
+      icon: AiOutlineHome
+    },
+    {
+      id: "about",
+      title: "About",
+      icon: AiOutlineUser
+    },
+    {
+      id: "services",
+      title: "Services",
+      icon: AiOutlineFundProjectionScreen
+    },
+    {
+      id: "projects",
+      title: "Projects",
+      icon: AiOutlineFundProjectionScreen
+    },
+    {
+      id: "contact",
+      title: "Contact",
+      icon: AiOutlineMail
+    },
   ];
 
   const scrollToSection = (sectionId) => {
@@ -54,7 +75,7 @@ const Navbar = () => {
       >
         <div className="px-8 py-4 rounded-full backdrop-blur-lg bg-black/20 border border-white/10">
           <ul className="flex items-center gap-8">
-            {navItems.map(({ id, icon: Icon }) => (
+            {navLinks.map(({ id, icon: Icon }) => (
               <motion.li
                 key={id}
                 className="relative"
@@ -105,7 +126,7 @@ const Navbar = () => {
             className={`fixed top-0 right-0 w-[70%] h-screen bg-gradient-to-l from-primary to-black-100 p-6 ${isOpen ? 'flex' : 'hidden'}`}
           >
             <ul className="list-none flex flex-col justify-start items-start gap-4 mt-[60px]">
-              {navItems.map((item) => (
+              {navLinks.map((item) => (
                 <motion.li
                   key={item.id}
                   initial={{ opacity: 0, x: -20 }}
@@ -135,7 +156,7 @@ const Navbar = () => {
                     {activeSection === item.id && (
                       <div className="absolute inset-0 rounded-full shadow-[0_0_15px_#915eff] animate-pulse" />
                     )}
-                    {item.id}
+                    {item.title}
                   </button>
                 </motion.li>
               ))}

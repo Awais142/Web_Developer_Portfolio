@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Projects from './components/Projects'
+import Services from './components/Services'
 import Loader from './components/Loader'
 
 function App() {
@@ -21,13 +23,15 @@ function App() {
       {loading ? (
         <Loader />
       ) : (
-        <div className="relative z-0">
+        <main className="relative z-0">
           <div className="bg-primary">
             <Navbar />
             <Hero />
             <About />
+            <Services />
+            <Projects />
           </div>
-        </div>
+        </main>
       )}
     </>
   )
