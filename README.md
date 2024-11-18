@@ -7,7 +7,6 @@ A modern, responsive portfolio website built with React.js and Tailwind CSS, fea
 - **Modern Design** - Clean and professional UI
 - **Responsive Layout** - Perfect display on all devices
 - **Smooth Animations** - Using Framer Motion
-- **Dark/Light Theme** - For better user experience
 - **Project Showcase** - Highlighting my best work
 - **Skills Section** - Display of technical expertise
 - **Contact Form** - Easy way to get in touch
